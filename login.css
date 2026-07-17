@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --primary-color: #004080;
+    --second-color: #ffffff;
+    --black-color: #000000;
+    --error-color: #e74c3c;
+    --success-color: #2ecc71;
+}
+
+body {
+    background-image: url("testpro/Banque.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+a {
+    text-decoration: none;
+    color: var(--second-color);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.debut {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.head {
+    position: relative;
+    width: 400px;
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 50px 30px;
+    text-align: center;
+    color: var(--second-color);
+}
+
+.login {
+    font-size: 25px;
+    font-weight: bold;
+    background: var(--primary-color);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.input {
+    position: relative;
+    margin: 15px 0;
+}
+
+.input1 {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    background: transparent;
+    color: var(--second-color);
+}
+
+.label {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-size: 14px;
+    background: var(--primary-color);
+    padding: 2px 8px;
+    border-radius: 5px;
+    color: var(--second-color);
+}
+
+.input-submit {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background: var(--primary-color);
+    color: var(--second-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.input-submit:hover {
+    background: #003366;
+}
+
+.password {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.flash-message {
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    animation: fadeOut 5s forwards;
+}
+
+.flash-message.success {
+    background-color: var(--success-color);
+    color: var(--second-color);
+}
+
+.flash-message.error {
+    background-color: var(--error-color);
+    color: var(--second-color);
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; display: none; }
+}
+
+@media only screen and (max-width: 500px) {
+    .head {
+        width: 90%;
+    }
+}

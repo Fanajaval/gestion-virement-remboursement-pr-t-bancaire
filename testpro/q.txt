@@ -1,0 +1,337 @@
+Ity ny login.php :
+<?php
+session_start();
+include 'db.php';
+
+if (isset($_SESSION["utilisateur"])) {
+    header("Location: head.php");
+    exit();
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $query = $conn->prepare("SELECT * from utilisateur where email=? and mot_de_passe=?");
+    $query->bind_param("ss", $email, $password);
+    $query->execute();
+    $result = $query->get_result();
+
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+        $_SESSION['utilisateur'] = $user;
+
+        if ($user['role'] == 'admin') {
+            header("Location: head.php");
+        } else {
+            header("Location: head.php");
+        }
+        exit();
+} else {
+    $error = "Identifiants incorrects.";
+}
+}
+ 
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - BankOnline</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="debut">
+        <div class="head">
+            <div class="login">
+                <span>Connexion</span>
+            </div>
+            <?php if (isset($error)) echo "<p class='error'>$error</p>"; ?>
+            <form action="login.php" method="post">
+                <div class="input">
+                    <input type="email" id="user" name="email" class="input1" required>
+                    <label for="user" class="label">Email</label>
+                    <i class="bx bx-user icon"></i>
+                </div>
+
+                <div class="input">
+                    <input type="password" id="pass" name="password" class="input1" required>
+                    <label for="pass" class="label" id="pwd">Mot de passe</label>
+                    <i class="bx bx-lock-alt icon"></i>
+                </div>
+                <div class="password">
+                    <div class="forgot">
+                        <a href="#">Mot de passe oublie</a>
+                    </div>
+                </div>
+
+                <div class="input">
+                    <input type="submit" class="input-submit" value="Se connecter">
+                </div>
+
+                <div class="inscription">
+                    <a href="#"><span>Vous n'avez pas un compte? </span></a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+ity ny login.css :
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --primary-color: #ffcc00;
+    --second-color: #ffffff;
+    --black-color: #000000;
+}
+
+body {
+    background-image: url("testpro/Banque.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+a {
+    text-decoration: none;
+    color: var(--second-color);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.debut {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgba(red, green, black, alpha);
+}
+
+.head {
+    position: relative;
+    width: 450px;
+    backdrop-filter: blur(25px);
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    padding: 7.5em 2.5em 4em 2.5em;
+    color: var(--second-color);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 2);
+}
+
+.login {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    width: 170px;
+    height: 70px;
+    border-radius: 0 0 20px 20px;
+}
+
+.login span {
+    font-size: 30px;
+    color: var(--black-color);
+}
+
+.login::before {
+    content:"";
+    position: absolute;
+    top: 0;
+    left: -30px;
+    width: 30px;
+    height: 30px;
+    border-top-right-radius: 50%;
+    background: transparent;
+    box-shadow: 15px 0 0 0 var(--primary-color);
+}
+
+.login::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -30px;
+    width: 30px;
+    height: 30px;
+    border-top-left-radius: 50%;
+    background: transparent;
+    box-shadow: -15px 0 0 0 var(--primary-color);
+}
+
+.input {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.input1 {
+    width: 100%;
+    height: 55px;
+    font-size: 16px;
+    background: transparent;
+    color: var(--second-color);
+    padding-inline: 20px 50px;
+    border: 2px solid var(--primary-color);
+    border-radius: 30px;
+    outline: none;
+}
+
+#user {
+    margin-bottom: 10px;
+}
+
+.label {
+    position: absolute;
+    /* top: 15px; */
+    bottom: 65px;
+    left: 20px;
+    transition: 0.2s;
+    /* display: none; */
+}
+
+.input1:focus ~ .label,
+.input1:valid .label {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 14px;
+    background-color: var(--primary-color);
+    border-radius: 30px;
+    color: var(--primary-color);
+    padding: 0 10px;
+}
+
+.icon {
+    position: absolute;
+    top: 18px;
+    right: 25px;
+    font-size: 20px;
+}
+
+.password {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+.input-submit {
+    width: 100%;
+    height: 50px;
+    background: #ececec;
+    font-size: 16px;
+    font-weight: 500px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.input-submit:hover {
+    background: var(--second-color);
+}
+
+.inscription {
+    text-align: center;
+}
+
+.inscription a {
+    font-weight: 500px;
+}
+
+@media only screen and (max-width: 564px) {
+    .debut {
+        padding: 20px;
+    }
+    .head {
+        padding: 7.5em 1.5em 4em 1.5em;
+    }
+}
+
+Ity ny logout.php :
+<?php
+session_start();
+session_destroy();
+
+session_start();
+$_SESSION['message'] = "Vous avez ete deconnecte avec succes !";
+header("Location: login.php");
+exit();
+?>
+
+ity ny head.php :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="accueil.css?v=2">
+    <title>BankOnline - Interface de Gestion</title>
+</head>
+<body>
+    <header>
+        <div class="logo">Bank<span>Online</span></div>
+        <nav>   
+            <ul class="menu">
+                <li class="id"><a href="client_banq.php">Clients</a></li>
+                <li class="id"><a href="virement.php">Virements</a></li>
+                <li class="id"><a href="preter.php">Prets</a></li>
+                <li class="id"><a href="rendre.php">Remboursements</a></li>
+                <li class="id"><a href="tableau_bord.php">Tableau de bord</a></li>
+                <li class="id"><a href="rapport.php">Rapports</a></li>
+                <li class="id"><a href="logout.php" class="btn">Se Deconnecter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Bienvenue sur BankOnline</h1>
+            <p>Gerer efficacement les clients, virements, prets et remboursements en toute simplicite.</p>
+            <a href="tableau_bord.php" class="btn">Acceder au tableau de bord</a>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2>Vue<span id="souligner"> d'ensem</span>ble</h2>
+        <div class="service">
+            <div class="item">
+                <h3>Clients</h3>
+                <p><span class="point">.</span> Gestion des comptes et informations</p>
+            </div>
+            <div class="item">
+                <h3>Virements</h3>
+                <p><span class="point">.</span>Suivi et validation des transactions</p>
+        </div>
+            <div class="item">
+                <h3>Prets</h3>
+                <p><span class="point">.</span>Gestion et approbation des credits</p>
+            </div>
+            <div class="item">
+                <h3>Remboursements</h3>
+                <p><span class="point">.</span>Suivi des paiements en cours</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 BankOnline - Tous droits reserves.</p>
+    </footer>
+</body>
+</html>

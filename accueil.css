@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: url(testpro/if1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: #004080;
+    color: #fff;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #ffcc00;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #ffcc00;
+    color: #004080;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+}
+
+/*.search-bar {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    width: 150px;
+}*/
+
+nav ul li .btn {
+    background-color: #ffcc00;
+    color: #004080;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.hero {
+    height: 50vh;
+    background-image: url(testpro/banque1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    margin: 15px 0;
+    font-size: 1.2em;
+}
+
+.hero .btn {
+    margin-top: 20px;
+}
+/*.search-container {
+    position: relative;
+    display: inline-block;
+}
+
+.search-results {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 250px;
+    background: white;
+    border: 1px solid #ddd;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    z-index: 1000;
+}
+
+.search-results li {
+    padding: 10px;
+    cursor: pointer;
+    list-style: none;
+    border-bottom: 1px solid #eee;
+}
+
+.search-results li:hover {
+    background: #f0f0f0;
+}
+
+.no-result {
+    padding: 10px;
+    color: #999;
+}*/
+
+.btn {
+    display: inline-block;
+    background-color: #ffcc00;
+    color: #004080;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #e6b800;
+}
+
+.services {
+    padding: 40px 10%;
+    text-align: center;
+}
+
+.services h2 {
+    color: #004080;
+    margin-bottom: 20px;
+}
+
+.service {
+    display: grid;
+    /*background: white;*/
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    /*padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;*/
+}
+
+.item {
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+}
+
+.item h3 {
+    color: #004080;
+    margin-bottom: 10px;
+}
+
+.item:hover{
+    transform: scale(1.05);
+    background: #ffcc00;
+}
+
+.services h2 {
+    color: white;
+}
+
+#souligner {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    background: #004080;
+    color: white;
+    padding: 15px 0;
+    margin-top: 20px;
+}

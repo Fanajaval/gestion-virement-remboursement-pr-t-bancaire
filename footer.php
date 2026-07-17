@@ -1,0 +1,1 @@
+<p>Copyright 2024, tous droits réservés</p>

@@ -1,0 +1,371 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: url(testpro/if1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: #004080;
+    color: #fff;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #ffcc00;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a:hover {
+    background-color: #ffcc00;
+    color: #004080;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
+
+.search-bar {
+    padding: 12px 15px; 
+    font-size: 1em; 
+    border-radius: 6px; 
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    width: 200px; 
+    margin-right: 10px; 
+    transition: all 0.3s ease; 
+    background: white; 
+    color: #fff; 
+}
+
+
+input[type="text"]:focus, select:focus { 
+    border-color: #ffcc00; 
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.8); 
+}
+
+nav ul li .btn {
+    background-color: #ffcc00;
+    color: #004080;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    flex-grow: 1;
+    padding-bottom: 50px;
+}
+
+h1 {
+    font-size: 1.8em; 
+    color: #ffffff;
+    font-weight: bold; 
+    text-align: center; 
+    margin-bottom: 25px; 
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.3); 
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px; 
+    overflow: hidden; 
+    border-radius: 15px; 
+    border: 2px solid white;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.308); 
+   text-align:  center; 
+   color: white; 
+   backdrop-filter: blur(5px); 
+}
+
+th {
+    background-color: #004080;
+    color: white;
+    font-weight: bold; 
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); 
+}
+
+table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.075);
+}
+
+table tr:hover { 
+    background-color: rgba(255, 255, 255, 0.123); 
+    cursor: pointer; 
+}
+
+.empty-message {
+    text-align: center;
+    padding: 20px;
+    color: rgb(245, 245, 245);
+    font-style: italic;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.edit-btn,.delete-btn {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.edit-btn {
+    background-color: #008CBA;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #007bb5;
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f;
+}
+
+.add-btn {
+    background-color: #ffcc00;
+    color: #004080;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 16px;
+}
+
+.add-btn:hover {
+    background-color: #e6b800;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.close {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: red;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.btn {
+    background-color: #ffcc00;
+    color: #004080;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #e6b800;
+}
+
+footer {
+    text-align: center;
+    background: #004080;
+    color: white;
+    padding: 15px 0;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Style du modal */
+.modal {
+    z-index: 1000; 
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(5px); 
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenu du modal */
+.modal-content {
+    background-image: url(testpro/b4.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 400px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    position: relative;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Bouton de fermeture */
+.close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    background: #f8f8f8;
+    padding: 5px 10px;
+    border-radius: 50%;
+    color: #333;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: white;
+    background: #ff4d4d;
+}
+
+/* Titre */
+.modal-content h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: white;
+}
+
+/* Champs du formulaire */
+.modal-content label {
+    display: block;
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 5px;
+    color: #bec6ce;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+.modal-content input:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* Bouton d'enregistrement */
+.modal-content .btn {
+    width: 100%;
+    background-color: #27AE60;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-content .btn:hover {
+    background-color: #229954;
+}

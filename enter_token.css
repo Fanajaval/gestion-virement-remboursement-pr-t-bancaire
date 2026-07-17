@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    /*background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);*/
+    background-image: url("testpro/if1.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-size: cover;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.8); /* Dark translucent background */
+    color: #fff;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s ease;
+    text-align: center;
+}
+
+.input-group input:focus {
+    border-color: #ff6347;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.input-group label {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 16px;
+    color: #bbb;
+    transition: all 0.3s ease;
+}
+
+/*animation label*/
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+    top: -10px;
+    left: 15px;
+    font-size: 12px;
+    color: #ff6347;
+}
+
+.button {
+    width: 100%;
+    padding: 15px;
+    background-color: #ff6347;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background-color: #e44d35;
+}
+
+.error-message {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: red;
+    margin-bottom: 15px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    animation: fadeIn 0.8s ease-out;
+}
+
+@media only screen and (max-width: 480px) {
+    .container {
+        padding: 30px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+}

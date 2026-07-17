@@ -1,0 +1,23 @@
+{
+    "name": "bankonline/gestion-bancaire",
+    "type": "project",
+    "description": "Système de gestion de virements et prêts bancaires",
+    "require": {
+        "php": ">=5.5.0",
+        "ext-ctype": "*",
+        "ext-filter": "*",
+        "ext-hash": "*",
+        "phpmailer/phpmailer": "^6.8",
+        "setasign/fpdf": "^1.8"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "PHPMailer\\PHPMailer\\": "vendor/phpmailer/phpmailer/src/"
+        }
+    }
+}
