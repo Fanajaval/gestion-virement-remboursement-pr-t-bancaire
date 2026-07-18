@@ -85,6 +85,8 @@ if (isset($_GET['supprimer'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="client.css?v=4">
+    <link rel="stylesheet" href="app-shell.css?v=1">
+    <script src="app-shell.js?v=1" defer></script>
     <title>Gestion des Clients - BankOnline</title>
     <style>
         .alert {
@@ -116,6 +118,7 @@ if (isset($_GET['supprimer'])) {
         <nav>   
             <ul class="menu" id="menu">
                 <li class="id"><a href="head.php">Accueil</a></li>
+                <li class="id"><a href="client_banq.php">Clients</a></li>
                 <li class="id"><a href="virement.php">Virements</a></li>
                 <li class="id"><a href="preter.php">Prets</a></li>
                 <li class="id"><a href="rendre.php">Remboursements</a></li>
@@ -125,13 +128,6 @@ if (isset($_GET['supprimer'])) {
             </ul>
         </nav>
     </header>
-    <script>
-        document.getElementById('hamburger').addEventListener('click', function() {
-            document.getElementById('menu').classList.toggle('active');
-            this.classList.toggle('active');
-        });
-    </script>
-
     <section class="container">
         <h1>Gestion des Clients</h1>
 

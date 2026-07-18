@@ -114,6 +114,8 @@ $result = $conn->query("SELECT*FROM virement order by dateTransfert asc");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion des Virements</title>
     <link rel="stylesheet" href="virement.css?v=4">
+    <link rel="stylesheet" href="app-shell.css?v=1">
+    <script src="app-shell.js?v=1" defer></script>
     <style>
         .alert {
             position: fixed;
@@ -144,6 +146,7 @@ $result = $conn->query("SELECT*FROM virement order by dateTransfert asc");
             <ul class="menu" id="menu">
                 <li class="id"><a href="head.php">Accueil</a></li>
                 <li class="id"><a href="client_banq.php">Clients</a></li>
+                <li class="id"><a href="virement.php">Virements</a></li>
                 <li class="id"><a href="preter.php">Prêts</a></li>
                 <li class="id"><a href="rendre.php">Remboursements</a></li>
                 <li class="id"><a href="tableau_bord.php">Tableau de bord</a></li>
@@ -152,13 +155,6 @@ $result = $conn->query("SELECT*FROM virement order by dateTransfert asc");
             </ul>
         </nav>
     </header>
-    <script>
-        document.getElementById('hamburger').addEventListener('click', function() {
-            document.getElementById('menu').classList.toggle('active');
-            this.classList.toggle('active');
-        });
-    </script>
-
     <section class="container">
         <h1>Gestion des Virements</h1>
         <button class="btn add-btn" onclick="document.getElementById('addVirementModal').style.display='block'">+ Nouveau Virement</button>

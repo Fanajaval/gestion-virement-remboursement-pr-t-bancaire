@@ -54,6 +54,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["date_debut"]) && isset
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tableau de Bord</title>
     <link rel="stylesheet" href="tableau_bord.css?v=4">
+    <link rel="stylesheet" href="app-shell.css?v=1">
+    <script src="app-shell.js?v=1" defer></script>
 </head>
 <body>
     <header>
@@ -70,18 +72,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["date_debut"]) && isset
                 <li class="id"><a href="virement.php">Virements</a></li>
                 <li class="id"><a href="preter.php">Prêts</a></li>
                 <li class="id"><a href="rendre.php">Remboursements</a></li>
+                <li class="id"><a href="tableau_bord.php">Tableau de bord</a></li>
                 <li class="id"><a href="rapport.php">Rapports</a></li>
                 <li class="id"><a href="logout.php" class="btn">Se Déconnecter</a></li>
             </ul>
         </nav>
     </header>
-    <script>
-        document.getElementById('hamburger').addEventListener('click', function() {
-            document.getElementById('menu').classList.toggle('active');
-            this.classList.toggle('active');
-        });
-    </script>
-
     <div class="container">
         <h1>Tableau de Bord</h1>
         <div class="stats">
