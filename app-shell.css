@@ -59,7 +59,9 @@ nav ul.menu li a[aria-current="page"] {
     header {
         position: sticky;
         top: 0;
-        z-index: 1100;
+        /* Le panneau de navigation est contenu dans l'en-tête : il doit rester
+           au-dessus du fond sombre pour conserver des liens cliquables. */
+        z-index: 1300;
         min-height: 64px;
         padding: 10px 16px;
     }
