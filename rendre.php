@@ -221,19 +221,20 @@ $result = $conn->query("SELECT * FROM rendre ORDER BY date_rendu ASC");
             <?php unset($_SESSION['error_message']); ?>
         <?php endif; ?>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Numéro du remboursement</th>
-                    <th>Numéro du prêt</th>
-                    <th>Montant rembousé</th>
-                    <th>Situation</th>
-                    <th>Montant restant</th>
-                    <th>Date du remboursement</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Numéro du remboursement</th>
+                        <th>Numéro du prêt</th>
+                        <th>Montant rembousé</th>
+                        <th>Situation</th>
+                        <th>Montant restant</th>
+                        <th>Date du remboursement</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
                 <?php if ($result->num_rows > 0): ?>
                     <?php while ($row = $result->fetch_assoc()): 
                         // Calculer le montant total du prêt et le total remboursé
@@ -274,6 +275,7 @@ $result = $conn->query("SELECT * FROM rendre ORDER BY date_rendu ASC");
                 <?php endif; ?>
             </tbody>
         </table>
+        </div>
     </section>
 
     <div id="addRemboursementModal" class="modal">

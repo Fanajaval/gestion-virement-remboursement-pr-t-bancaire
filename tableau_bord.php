@@ -117,17 +117,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["date_debut"]) && isset
             <button type="submit">Filtrer</button>
         </form>
 
-        <table class="table">
-    <thead>
-        <tr>
-            <th>Numéro du Prêt</th>
-            <th>Montant</th>
-            <th>Situation</th>
-            <th>Restant à Payer</th>
-            <th>Date</th>
-        </tr>
-    </thead>
-    <tbody id="tablePrets">
+        <div class="table-wrapper">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Numéro du Prêt</th>
+                        <th>Montant</th>
+                        <th>Situation</th>
+                        <th>Restant à Payer</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody id="tablePrets">
     <?php
 foreach ($list_prets as $pret) {
     $num_pret = $pret['num_pret'];
@@ -167,8 +168,9 @@ foreach ($list_prets as $pret) {
 <?php
 }
 ?>
-    </tbody>
-</table>
+                </tbody>
+            </table>
+        </div>
     </div>
     <footer>
         <p>&copy; 2025 BankOnline - Tous droits réservés.</p>

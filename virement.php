@@ -174,17 +174,18 @@ $result = $conn->query("SELECT*FROM virement order by dateTransfert asc");
             <?php unset($_SESSION['error_message']); ?>
         <?php endif; ?>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Expéditeur (N° Compte)</th>
-                    <th>Bénéficiaire (N° Compte)</th>
-                    <th>Montant</th>
-                    <th>Date de Transfert</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Expéditeur (N° Compte)</th>
+                        <th>Bénéficiaire (N° Compte)</th>
+                        <th>Montant</th>
+                        <th>Date de Transfert</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
                 <?php if ($result->num_rows > 0): ?>
                     <?php while ($row = $result->fetch_assoc()): ?>
                 <tr>
@@ -214,6 +215,7 @@ $result = $conn->query("SELECT*FROM virement order by dateTransfert asc");
                 <?php endif; ?>
             </tbody>
         </table>
+        </div>
     </section>
 
     <div id="addVirementModal" class="modal">

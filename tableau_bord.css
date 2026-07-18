@@ -226,22 +226,182 @@ input[type="date"]:focus, select:focus {
     margin-top: 40px; 
 }
 
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 20px;
+}
+
+.table-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background: #004080;
+    border-radius: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #ffcc00;
+}
 
 
 
+/* RESPONSIVE DESIGN */
 
+/* Tablettes et petits écrans */
+@media screen and (max-width: 1024px) {
+    .container .stats { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
 
+    .container {
+        padding: 30px 20px;
+    }
+
+    nav ul li {
+        margin: 0 5px;
+    }
+
+    nav ul li a {
+        padding: 6px 10px;
+        font-size: 0.9em;
+    }
+}
+
+/* Smartphones et tablettes portrait*/
 @media screen and (max-width: 768px) {
-    .dashboard {
+    header {
         flex-direction: column;
-        align-items: center;
+        padding: 10px;
+        gap: 15px;
     }
 
-    .filtre-prets form {
-        flex-direction: column;
+    .logo {
+        font-size: 20px;
     }
 
-    table {
-        font-size: 14px;
+    nav ul {
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    nav ul li a {
+        display: block;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .container {
+        padding: 20px 15px;
+        margin: 15px auto;
+    }
+
+    .container h1, .container h2 {
+        font-size: 1.4em;
+    }
+
+    .container .stats {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .container .card {
+        padding: 20px;
+        font-size: 1em;
+    }
+
+    .date-filter {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .date-filter label {
+        font-size: 1em;
+    }
+
+    input[type="date"], select {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 0.9em;
+    }
+
+    /* Table responsive */
+    .container .table {
+        font-size: 0.85em;
+    }
+
+    .container .table th, 
+    .container .table td {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+
+    /* Scroll horizontal pour le tableau sur mobile */
+    .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Très petits smartphones*/
+@media screen and (max-width: 480px) {
+    .logo {
+        font-size: 18px;
+    }
+
+    .container h1, .container h2 {
+        font-size: 1.2em;
+    }
+
+    .container .card {
+        padding: 15px;
+        font-size: 0.9em;
+    }
+
+    .container .card h3 {
+        font-size: 0.95em;
+    }
+
+    .container .card p {
+        font-size: 1.2em;
+    }
+
+    .container .table {
+        font-size: 0.75em;
+    }
+
+    .container .table th,
+    .container .table td {
+        padding: 6px;
+        font-size: 0.8em;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 0.85em;
+    }
+
+    footer {
+        font-size: 0.85em;
+        padding: 10px 0;
     }
 }

@@ -89,7 +89,7 @@ if (isset($_POST['nouveau'])) {
                             $mail->send();
                         }
                     } catch (\Exception $e) {
-                    
+                        //erreur d'envoi d'email
                     }
                 }
                 
@@ -267,18 +267,19 @@ $result = $conn->query("SELECT * FROM preter ORDER BY datepret ASC");
             <?php unset($_SESSION['error_message']); ?>
         <?php endif; ?>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Numéro du prêt</th>
-                    <th>Numéro de compte</th>
-                    <th>Montant prêté</th>
-                    <th>Bénéfice Banque (10%)</th>
-                    <th>Date du prêt</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Numéro du prêt</th>
+                        <th>Numéro de compte</th>
+                        <th>Montant prêté</th>
+                        <th>Bénéfice Banque (10%)</th>
+                        <th>Date du prêt</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
                 <?php if ($result->num_rows > 0): ?>
                     <?php while ($row = $result->fetch_assoc()): ?>
                         <tr>
@@ -300,6 +301,7 @@ $result = $conn->query("SELECT * FROM preter ORDER BY datepret ASC");
                 <?php endif; ?>
             </tbody>
         </table>
+        </div>
     </section>
 
     <div id="addPretModal" class="modal">
